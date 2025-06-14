@@ -1,0 +1,23 @@
+{
+  "name": "developerhub",
+  "version": "1.0.0",
+  "description": "DeveloperHub is a full-featured web platform built for developers to connect, share, and grow together. Inspired by platforms like Dev.to and Stack Overflow, it aims to create a collaborative space where developers can contribute, learn, and build their professional presence.",
+  "license": "ISC",
+  "author": "Michael Emmanuel",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
