@@ -4,10 +4,12 @@
   "description": "DeveloperHub is a full-featured web platform built for developers to connect, share, and grow together. Inspired by platforms like Dev.to and Stack Overflow, it aims to create a collaborative space where developers can contribute, learn, and build their professional presence.",
   "license": "ISC",
   "author": "Michael Emmanuel",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
