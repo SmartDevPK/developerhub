@@ -25,7 +25,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(process.cwd(), "src", "views"));
 
 // Serve static files from public
-app.use(express.static("./src/public"));
+app.use(express.static(path.join(process.cwd(), "src", "public")));
 
 app.use(userRoutes);
 
