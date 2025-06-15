@@ -15,6 +15,4 @@ const getHomePage = async (req, res) => {
     }
 }
 
-module.exports = {
-    getHomePage
-}
+export default  { getHomePage };
