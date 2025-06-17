@@ -1,8 +1,12 @@
 import express from "express";
-import homeController from "../controller/userController.js";
+import { getHomePage, registerUser } from "../controller/userController.js";
 
 const router = express.Router();
 
-router.get("/", homeController.getHomePage);
+// Route to render the home page with the form
+router.get("/", getHomePage);
+
+// Route to handle user registration form submission
+router.post("/register", registerUser);
 
 export default router;
