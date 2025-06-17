@@ -1,4 +1,5 @@
 import User from "../model/UserModel.js";
+import bcrypt from "bcryptjs";
 
 // Controller to render the home page
 export const getHomePage = async (req, res) => {
@@ -29,8 +30,12 @@ export const registerUser = async (req, res) => {
       });
     }
 
+    // hash the password
+    const hashedpassword = await bcrypt.hash(password, 10);
+
+
     // Create and save new user
-    const newUser = new User({ username, email, password });
+    const newUser = new User({ username, email, password:hashedpassword });
     await newUser.save();
 
     // Redirect to homepage
