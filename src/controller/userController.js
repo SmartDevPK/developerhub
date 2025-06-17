@@ -6,6 +6,7 @@ export const getHomePage = async (req, res) => {
   try {
     res.status(200).render("index", {
       title: "Home Page",
+      message: null,  // Ensure message is defined (null or empty if none)
     });
   } catch (error) {
     console.error("Error rendering homepage:", error.message);
@@ -30,16 +31,20 @@ export const registerUser = async (req, res) => {
       });
     }
 
-    // hash the password
-    const hashedpassword = await bcrypt.hash(password, 10);
-
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create and save new user
-    const newUser = new User({ username, email, password:hashedpassword });
+    const newUser = new User({ username, email, password: hashedPassword });
     await newUser.save();
 
-    // Redirect to homepage
-    res.redirect("/");
+    // Render the homepage with success message instead of redirecting
+    res.status(200).render("index", {
+      title: "Home Page",
+      message: "Registration successful!",
+    });
+
+   
   } catch (err) {
     console.error("Registration Error:", err.message);
     res.status(500).render("index", {
